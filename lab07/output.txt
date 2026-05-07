@@ -1,0 +1,27 @@
+Ingrese su nota: 10
+Ingrese su nota: 20
+Ingrese su nota: 30
+Ingrese su nota: 40
+Ingrese su nota: 50
+Ingrese su nota: 60
+Ingrese su nota: 70
+Ingrese su nota: 80
+Ingrese su nota: 90
+Ingrese su nota: 100
+Ingrese su nota: -1
+Nota[0] = 10 
+Nota[1] = 20 
+Nota[2] = 30 
+Nota[3] = 40 
+Nota[4] = 50 
+Nota[5] = 60 
+Nota[6] = 70 
+Nota[7] = 80 
+Nota[8] = 90 
+Nota[9] = 100 
+Sobresalientes: 2
+Aprobados: 2
+Reprobados:6
+La nota maxima es: 100
+La nota minima es: 10
+
