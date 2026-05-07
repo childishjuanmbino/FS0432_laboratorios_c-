@@ -1,0 +1,9 @@
+Ingrese el numero de intervalos: 
+1000
+Por metodo de trapecio compuesto: 3.13859
+Por metodo de simpson: 3.13826
+El valor exacto de pi: 3.14159
+
+El valor absoluto del metodo del trapecio compuesto: 0.00300217
+El error absoluto del metodo de Simpson: 0.003336
+
