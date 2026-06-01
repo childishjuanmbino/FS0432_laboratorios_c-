@@ -1,0 +1,3 @@
+En el caso de jacobi se hicieron 355 iteraciones para llegar a un error de 9.6385e-11 mientras que con el metodo de Gauss Seidel se hicieron 185 iteraciones para llegar a un error de 9.58764e-11. Aunque en el caso de Gayss Seidel el error es menor (por muy poco) este toma menos iteraciones, siendo que si se agregaran mas iteraciones problemente el error seria aun menor.
+
+Ademas de esto el error maximo contra solucion exacta del metodo Gauss Seidel es 0.000837461 mientras que con el metodo de jacobi es 0.00083746, siendo ambos errores casi iguales. Siendo el metodo de Gauss Seidel el mas eficiente entre los dos.
