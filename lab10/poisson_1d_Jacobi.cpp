@@ -47,7 +47,10 @@ int main()
     const int max_iter = 100000;
     const double tol = 1e-10;
 
+<<<<<<< Updated upstream
     std::vector<double> errores_convergencia;
+=======
+>>>>>>> Stashed changes
     std::vector<double> x(N + 1);
     std::vector<double> u(N + 1, 0.0);
     std::vector<double> u_new(N + 1, 0.0); // Vector auxiliar necesario para Jacobi
@@ -68,6 +71,7 @@ int main()
     int iter = 0;
     double error = 1.0;
 
+<<<<<<< Updated upstream
     while (iter < max_iter && error > tol)
 {
     error = 0.0;
@@ -96,6 +100,30 @@ int main()
     iter++;
 }
 
+=======
+    while (iter < max_iter && error > tol) 
+        {
+        std::vector<double> errores;
+	std::vector<double> iteraciones;
+	for (int i = 1; i < N; i++)
+	{
+		u_new[i] = 0.5 * (u[i-1] + u[i+1] - h*h*fuente(x[i]));
+	}
+	error = 0.0;
+	
+	for (int i = 1; i < N; i++)
+	{
+		error = std::max(error, std::abs(u_new[i] - u[i]
+	}
+	errores.push_back(error);
+	iteraciones.push_back(iter);
+	u = u_new;
+	
+	iter++;
+        
+    }
+
+>>>>>>> Stashed changes
     std::cout << "Iteraciones: " << iter << std::endl;
     std::cout << "Error final: " << error << std::endl;
 
@@ -108,16 +136,27 @@ int main()
     std::cout << "Error maximo contra solucion exacta: "
               << error_max << std::endl;
 
+<<<<<<< Updated upstream
 plt::plot(x, u, {{"label","Jacobi"}});
 plt::plot(x, u_exacta, {{"label","Exacta"}});
 
 plt::title("Ecuacion de Poisson 1D");
+=======
+
+plt::figure_size(800, 600);
+
+plt::plot(x, u, {{"label", "Jacobi"}});
+plt::plot(x, u_exacta, {{"label", "Exacta"}});
+
+plt::title("Solucion de la ecuacion de Poisson");
+>>>>>>> Stashed changes
 plt::xlabel("x");
 plt::ylabel("u(x)");
 
 plt::legend();
 plt::grid(true);
 
+<<<<<<< Updated upstream
 plt::show();
 
 plt::save("solucion_jacobi.png");
@@ -143,6 +182,24 @@ plt::grid(true);
 plt::save("error_jacobi.png");
 plt::show();
        
+=======
+plt::save("solucion_jacobi.png");
+
+plt::figure_size(800, 600);
+
+plt::plot(iteraciones, errores);
+
+plt::title("Convergencia del metodo de Jacobi");
+plt::xlabel("Iteracion k");
+plt::ylabel("Error maximo");
+
+plt::yscale("log");
+
+plt::grid(true);
+
+plt::save("error_jacobi.png");
+
+>>>>>>> Stashed changes
 
     return 0;
 }
