@@ -1,0 +1,8 @@
+Metodo: Jacobi 2D
+N = 50
+h = 0.02
+Tolerancia = 1e-08
+Iteraciones = 124705
+Error de convergencia final = 9.991107240148178e-09
+Error maximo respecto a la solucion exacta = 4.561217571159154e-05
+

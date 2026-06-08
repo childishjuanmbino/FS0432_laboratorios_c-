@@ -1,7 +1,6 @@
-# poisson_2d_jacobi.py
 #
 # Laboratorio 11
-# Ecuacion de Poisson 2D usando el metodo de Jacobi
+
 #
 # Complete las secciones marcadas con TODO.
 
@@ -64,20 +63,23 @@ def main():
     u_exacta = solucion_exacta(X, Y)
 
     u = np.zeros((N + 1, N + 1))
-    u_new = np.zeros((N + 1, N + 1))
     
 
     errores_convergencia = []
 
     iteracion = 0
     error_conv = 1.0
-    
+    print(type(u))
+    print(np.shape(u))
 
     while error_conv > tol and iteracion < max_iter:
 
+      error_conv = 0.0 
       for i in range(1, N):
          for j in range(1, N):
-            u_new[i, j] = 0.25 * (
+            u_old = u[i,j]
+            
+            u[i,j] = 0.25 * (
                 u[i+1, j]
                 + u[i-1, j]
                 + u[i, j+1]
@@ -85,15 +87,15 @@ def main():
                 - h**2 * f[i, j]
             )
 
-         error_conv = np.max(np.abs(u_new - u))
+         error_conv = np.max(np.abs(u[i, j] - u_old))
          errores_convergencia.append(error_conv)
 
-         u = u_new.copy()
+         
          iteracion += 1
          
          error_exacto = error_maximo(u, u_exacta)
 
-    print("Metodo: Jacobi 2D")
+    print("Metodo: Gauss 2D")
     print("N =", N)
     print("h =", h)
     print("Tolerancia =", tol)
@@ -105,25 +107,25 @@ def main():
 
     graficar_mapa(
         u,
-        "Jacobi 2D: solucion numerica",
-        "solucion_jacobi_heatmap.png"
+        "Gauss 2D: solucion numerica",
+        "solucion_gauss_heatmap.png"
     )
 
     graficar_mapa(
         u_exacta,
-        "Poisson 2D: solucion exacta",
-        "solucion_exacta_heatmap.png"
+        "Gauss 2D: solucion exacta",
+        "solucion_exacta_gauss_heatmap.png"
     )
     
     graficar_mapa(
     	error_absoluto,
-    	"Error absoluto de Jacobi 2D",
-    	"error_absoluto_jacobi_heatmap.png"
+    	"Error absoluto de Gauss 2D",
+    	"error_absoluto_gauss_heatmap.png"
     )
 
     graficar_error_convergencia(
         errores_convergencia,
-        "error_convergencia_jacobi.png"
+        "error_convergencia_gauss.png"
     )
 
     plt.show()

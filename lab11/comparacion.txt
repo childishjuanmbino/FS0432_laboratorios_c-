@@ -1,0 +1,15 @@
+El metodo de jacobi hizo un total de 124705 mientras que el metodo de Gauss hizo un total de 53067.
+El metodo de Gauss consiguio la tolerancia en menos iteraciones.
+Si, los metodos producen una solucion parecida a la analitica.
+
+
+El metodo de jacobi tuvo un error de convergencia de 9.991107240148178e-09.
+El metodo de Gauss tuvo un error de convergencia de 9.989670549321109e-09.
+Siendo el metodo de Gauss el que tuvo un menor error de convergencia por muy poco.
+
+El metodo de Jacobi tuvo un error maximo respecto a la solucion exacta de 4.561217571159154e-05.
+El metodo de Gauss tuvo un error maximo respecto a la solucion exacta de 0.0006869903536723398.
+En este caso el que menor cantidad de error obtuvo es el metodo de Jacobi por bastante.
+
+En este caso entre los dos metodos, el que convergue mas rapido es el metodo de Gauss.
+

@@ -1,0 +1,8 @@
+Metodo: Gauss 2D
+N = 50
+h = 0.02
+Tolerancia = 1e-08
+Iteraciones = 53067
+Error de convergencia final = 9.989670549321109e-09
+Error maximo respecto a la solucion exacta = 0.0006869903536723398
+
