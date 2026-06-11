@@ -38,8 +38,8 @@ def montecarlo(d, valor_analitico):
 	error_mc = abs(integral_mc - valor_analitico)   
 
 	print(
-	    f"Monte Carlo: {integral_mc:.8f} "
-	    f"(Error: {error_mc:.8f}, Tiempo: {t1_mc - t0_mc:.4f}s)"
+	    f"Monte Carlo: {integral_mc:.8e} "
+	    f"(Error: {error_mc:.8f}, Tiempo: {t1_mc - t0_mc:.4e}s)"
 	)
 
 # ---------------------------------------------------------
