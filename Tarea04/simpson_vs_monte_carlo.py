@@ -16,7 +16,7 @@ valor_analitico = (2.0 / np.pi)**d
 # ---------------------------------------------------------
 def montecarlo(d, valor_analitico):
 	print(f"--- Integración en d={d} ---")
-	print(f"Analítico:   {valor_analitico:.8f}")
+	print(f"Analítico:   {valor_analitico:.8e}")
 	N_total_mc = 10**6
 
 
@@ -39,7 +39,7 @@ def montecarlo(d, valor_analitico):
 
 	print(
 	    f"Monte Carlo: {integral_mc:.8e} "
-	    f"(Error: {error_mc:.8f}, Tiempo: {t1_mc - t0_mc:.4e}s)"
+	    f"(Error: {error_mc:.8e}, Tiempo: {t1_mc - t0_mc:.4f}s)"
 	)
 
 # ---------------------------------------------------------
@@ -66,17 +66,19 @@ def simpsons(d, valor_analitico):
 
 	print(
 	    f"Simpson:     {integral_simpson:.8f} "
-	    f"(Error: {error_simpson:.8f}, Tiempo: {t1_simpson - t0_simpson:.4f}s)"
+	    f"(Error: {error_simpson:.8e}, Tiempo: {t1_simpson - t0_simpson:.4f}s)"
 	)
-for i in range(8):
+for i in range(7):
 	valor_analitico = (2.0 / np.pi)**(i+1)
 	montecarlo(i+1, valor_analitico)
 	simpsons(i+1, valor_analitico)
 	
 print("Ya para este punto muere el simpsons, por lo que se continua hasta llegar a un valor entre 9 y 100 en montecarlo")
-for i in range(100):
-	valor_analitico = (2.0 / np.pi)**(i+8)
-	montecarlo(i+8, valor_analitico)
+
+
+for i in range(1000):
+	valor_analitico = (2.0 / np.pi)**(i+100)
+	montecarlo(i+100, valor_analitico)
 print(f"Con N_simpson {N_total_simpson}")
 print(f"Con N_mc {N_total_mc}")
  
