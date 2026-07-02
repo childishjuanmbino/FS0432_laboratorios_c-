@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 	
 	if (rank == 0) {
 		std::cout << "El resultado del producto punto es: " << suma_global << std::endl;
-		std::cout << "El tiempo de ejecucion: " << (t1- t0) << "s" << std::endl;
+		std::cout << "TIEMPO " << (t1 - t0) << std::endl;
 	}	
 	MPI_Finalize();
 	return 0;
